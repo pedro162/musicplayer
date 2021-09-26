@@ -187,7 +187,7 @@ const Routes = (props)=>{
             if(String(typeShowList).trim()== 'list'){
                 
 
-                    setSongIndex(songIndex + 1)
+                    setSongIndex(songIndex + 1)//
             
                 
 
