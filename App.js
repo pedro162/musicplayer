@@ -1,13 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Routes from './Player/routes'
+//import RouteEstudo from './CursoDeveloperPlus/route.js'
+import Rota from './CursoDeveloperPlus/Drower/route.js'
 
 export default function App() {
+  const estudo = false;
+  const frete = false;
+  const player = true;
+
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    estudo ?  <Rota/> :  (player ? <Routes/>: null)
   );
 }
 
