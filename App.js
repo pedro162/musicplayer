@@ -1,19 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Routes from './Player/routes'
-//import RouteEstudo from './CursoDeveloperPlus/route.js'
-import Rota from './CursoDeveloperPlus/Drower/route.js'
+import Rota from './ForcaApp/route.js'
+import config from './ForcaApp/Database/Config/config.js';
+import {createConnection} from 'typeorm'
 
 export default function App() {
-  const estudo = false;
-  const frete = false;
-  const player = true;
+  	const connection = React.useCallback(async ()=>{
+	  	try{
 
+	  		const connection = await createConnection(config);
+        //await connection.runMigrations()
+        //await connection.synchronize()
+
+	  	}catch(err){
+	  		console.log(err.message)
+	  	}
+  	})
+
+  	React.useEffect(()=>{
+      const conectar = async()=>{
+        await connection()
+      }
+  		conectar()
   
-  return (
-    estudo ?  <Rota/> :  (player ? <Routes/>: null)
-  );
+  	}, []);
+
+  	return (
+     	<Rota/>
+  	);
 }
 
 const styles = StyleSheet.create({

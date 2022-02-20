@@ -1,10 +1,15 @@
 {
   "expo": {
-    "name": "ProjetoExpo",
-    "slug": "ProjetoExpo",
+    "name": "Força de vendas App",
+    "slug": "forca-vendas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "platforms": [
+         "ios",
+         "android",
+         "web"
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,12 +22,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-xxxxxx"
+      },
+      "bundleIdentifier": "com.companyname.appname",
+      "buildNumber": "1.0.0",
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.pedro169.musicplayer",
+      "versionCode": 1,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-xxxxxx"
       }
     },
     "web": {
